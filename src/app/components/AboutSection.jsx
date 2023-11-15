@@ -52,7 +52,7 @@ const TAB_DATA = [
             </ul>
         )
     },
-]
+];
 
 export const AboutSection = () => {
     const [tab, setTab] = useState('skills');
