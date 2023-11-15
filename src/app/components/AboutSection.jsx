@@ -3,7 +3,57 @@ import React, { useTransition, useState } from 'react';
 import Image from 'next/image';
 import TabButton from './TabButton';
 
-const TAB_DATA = [{}]
+const TAB_DATA = [
+    {
+        title: 'Skills',
+        id: 'skills',
+        content: (
+            <ul>
+                <li>HTML5</li>
+                <li>CSS3</li>
+                <li>JavaScript</li>
+                <li>Bootstrap</li>
+                <li>PHP</li>
+                <li>Vue</li>
+                <li>React</li>
+                <li>Cybersecurity</li>
+            </ul>
+        )
+    },
+    {
+        title: 'Education',
+        id: 'education',
+        content: (
+            <ul>
+                <li>CEPI-BASE Frontend Academy, Barcelona</li>
+                <li>Higher Education in Vocational Training at Jesuïtes El Clot, Barcelona</li>
+            </ul>
+        )
+    },
+    {
+        title: 'Certifications',
+        id: 'certifications',
+        content: (
+            <ul>
+                <li>Senior Technician in Java with Android, CEPI-BASE Academy</li>
+                <li>Senior Technician in Web Application Development, Jesuïtes El Clot</li>
+                <li>Senior Technician in Computer Systems and Network Administration, Jesuïtes El Clot</li>
+                <li>Senior Technician in Applications and Development with Python, CEPI-BASE Academy</li>
+            </ul>
+        )
+    },
+    {
+        title: 'Languaje',
+        id: 'languaje',
+        content: (
+            <ul>
+                <li>Catalán</li>
+                <li>Spanish</li>
+                <li>English</li>
+            </ul>
+        )
+    },
+]
 
 export const AboutSection = () => {
     const [tab, setTab] = useState('skills');
@@ -32,8 +82,10 @@ export const AboutSection = () => {
                 <div className='flex flex-row mt-8'>
                     <TabButton selectTab={() => handleTabChange('skills')} active={tab == 'skills'}>Skills</TabButton>
                     <TabButton selectTab={() => handleTabChange('education')} active={tab == 'education'}>Education</TabButton>
-                    <TabButton selectTab={() => handleTabChange('experience')} active={tab == 'experience'}>Experience</TabButton>
+                    <TabButton selectTab={() => handleTabChange('certifications')} active={tab == 'certifications'}>Certifications</TabButton>
+                    <TabButton selectTab={() => handleTabChange('languaje')} active={tab == 'languaje'}>Languaje</TabButton>
                 </div>
+                <div className='mt-8'>{TAB_DATA.find((t) => t.id == tab).content}</div>
             </div>
         </div>
     </section>
