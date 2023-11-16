@@ -4,6 +4,7 @@ import HeroSection from "./components/HeroSection";
 import Navbar from "./components/Navbar";
 import AboutSection from "./components/AboutSection";
 import ProjectsSection from "./components/ProjectsSection";
+import EmailSection from "./components/EmailSection";
 
 export default function Home() {
   return (
@@ -13,7 +14,13 @@ export default function Home() {
         <HeroSection />
         <AboutSection />
         <ProjectsSection />
-        <button
+        <EmailSection />
+      </div>{" "}
+    </main>
+  );
+}
+
+/**<button
           onClick={async () => {
             const res = await fetch("/api/send", {
               method: "POST",
@@ -23,8 +30,4 @@ export default function Home() {
           }}
         >
           Send Email{" "}
-        </button>{" "}
-      </div>{" "}
-    </main>
-  );
-}
+        </button>{" "}*/
