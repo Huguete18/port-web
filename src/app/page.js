@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import HeroSection from "./components/HeroSection";
 import Navbar from "./components/Navbar";
@@ -12,6 +13,17 @@ export default function Home() {
         <HeroSection />
         <AboutSection />
         <ProjectsSection />
+        <button
+          onClick={async () => {
+            const res = await fetch("/api/send", {
+              method: "POST",
+            });
+            const data = await res.json();
+            console.log(data);
+          }}
+        >
+          Send Email{" "}
+        </button>{" "}
       </div>{" "}
     </main>
   );
