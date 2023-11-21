@@ -4,6 +4,7 @@ import LinkedinIcon from '../../../public/linkedin-icon.svg';
 import Link from 'next/link';
 import Image from 'next/image';
 import emailjs from '@emailjs/browser';
+import { motion } from 'framer-motion';
 
 const EmailSection = () => {
     const form = useRef();
@@ -41,7 +42,7 @@ const EmailSection = () => {
   return (
     <section className='grid md:grid-cols-2 my-12 md:my-12 py-24 gap-4 relative'>
         <div className='bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-primary-900 to-transparent rounded-full h-80 w-80 z-0 blur-lg absolute top-3/4 -left-4 transform -translate-x-1/2 -translate-1/2'></div>
-        <div>
+        <motion.div initial={{ opacity: 0, scale:0.5 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.5 }}>
             <h5 className='text-xl font-bold text-white my-2'>Le{'t\'s'} Connect</h5>
             <p className='text-[#adb7be] mb-4 max-w-md'>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius ratione cupiditate ducimus consectetur, at sed nihil ut saepe corporis optio voluptates sapiente sit maiores inventore quod unde eum laboriosam molestiae.
@@ -54,8 +55,8 @@ const EmailSection = () => {
                     <Image src={LinkedinIcon} alt='Linkedin Icon' />
                 </Link>
             </div>
-        </div>
-        <div>
+        </motion.div>
+        <motion.div initial={{ opacity: 0, scale:0.5 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.5 }}>
             <form ref={form} onSubmit={sendEmail} className='flex flex-col'>
                 <div className='mb-6'>
                     <label htmlFor='name' className='text-white block mb-2 text-sm font-medium'>Your first name and last name</label>
@@ -75,7 +76,7 @@ const EmailSection = () => {
                     )
                 }
             </form>
-        </div>
+        </motion.div>
     </section>
   );
 };

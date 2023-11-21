@@ -58,7 +58,3 @@ const AchievementsSection = () => {
   );
 };
 export default AchievementsSection;
-
-/**
- ** 02:04:15
- */
