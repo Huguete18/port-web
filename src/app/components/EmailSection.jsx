@@ -40,7 +40,7 @@ const EmailSection = () => {
   };
 
   return (
-    <section id='contact' className='grid md:grid-cols-2 my-12 md:my-12 py-24 gap-4 relative'>
+    <section id='contact' className='grid md:grid-cols-2 my-12 md:my-12 py-12 gap-4 relative'>
         
         <motion.div initial={{ opacity: 0, scale:0.5 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.5 }}>
             <h5 className='text-xl font-bold text-white my-2'>Le{'t\'s'} Connect</h5>

@@ -26,7 +26,7 @@ const HeroSection = () => {
                         wrapper="span" speed={50} repeat={Infinity}/>
                 </h1>
                 <p className='text-[#adb7be] text-base sm:text-lg mb-6 lg:text-xl'>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptatum.
+                    {'I\'m'} a passionate web develop and Cybersecurity.
                 </p>
                 <div>
                     <button className='px-6 py-3 w-full sm:w-fit rounded-full mr-4 bg-gradient-to-br from-blue-500 via-primary-500 to-secondary-500 hover:bg-slate-200 text-white'>Hire Me</button>
