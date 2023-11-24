@@ -29,7 +29,6 @@ body {
 
 ::-webkit-scrollbar {
     width: .60rem;
-    background-color: var(--scroll-bar-color);
 }
 
 ::-webkit-scrollbar-thumb {
@@ -37,5 +36,9 @@ body {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background-color: var(--text-color-light);
+    background-color: var(--scroll-thumb-color);
+}
+
+::-webkit-scrollbar-track {
+    background-color: var(--scroll-bar-color);
 }

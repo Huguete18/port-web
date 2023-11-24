@@ -48,10 +48,10 @@ const EmailSection = () => {
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius ratione cupiditate ducimus consectetur, at sed nihil ut saepe corporis optio voluptates sapiente sit maiores inventore quod unde eum laboriosam molestiae.
             </p>
             <div className='socials flex flex-row gap-2'>
-                <Link href='github.com'>
+                <Link href='https://github.com/Huguete18' target='_blank' rel='noopener noreferrer'>
                     <Image src={GithubIcon}  alt='Github Icon' />
                 </Link>
-                <Link href='linkedin.com'>
+                <Link href='https://www.linkedin.com/in/sergi-huguet-986b3071/' target='_blank' rel='noopener noreferrer'>
                     <Image src={LinkedinIcon} alt='Linkedin Icon' />
                 </Link>
             </div>
@@ -61,15 +61,15 @@ const EmailSection = () => {
             <form ref={form} onSubmit={sendEmail} className='flex flex-col'>
                 <div className='mb-6'>
                     <label htmlFor='name' className='text-white block mb-2 text-sm font-medium'>Your first name and last name</label>
-                    <input type='text' id='name' name="user_name" value={formData.user_name} onChange={handleInputChange} required className='bg-[#18191e] border border-[#33353f] placeholder-[#9ca2a9] text-gray-100 text-sm rounded-lg block w-full p-2.5' placeholder='Your full name' />
+                    <input type='text' id='name' name="user_name" value={formData.user_name} onChange={handleInputChange} required className='bg-[#151920] border border-[#585c6d] placeholder-[#9ca2a9] text-gray-100 text-sm rounded-lg block w-full p-2.5' placeholder='Your full name' />
                 </div>
                 <div className='mb-6'>
                     <label htmlFor='email' className='text-white block mb-2 text-sm font-medium'>Your email</label>
-                    <input type='email' id='email' name="user_email" value={formData.user_email} onChange={handleInputChange} required className='bg-[#18191e] border border-[#33353f] placeholder-[#9ca2a9] text-gray-100 text-sm rounded-lg block w-full p-2.5' placeholder='username@gmail.com' />
+                    <input type='email' id='email' name="user_email" value={formData.user_email} onChange={handleInputChange} required className='bg-[#151920] border border-[#585c6d] placeholder-[#9ca2a9] text-gray-100 text-sm rounded-lg block w-full p-2.5' placeholder='username@gmail.com' />
                 </div>
                 <div className='mb-6'>
                     <label className='text-white block mb-2 text-sm font-medium'>Message</label>
-                    <textarea type='text' id='subject' name='message' value={formData.message} onChange={handleInputChange} required className='bg-[#18191e] border border-[#33353f] placeholder-[#9ca2a9] text-gray-100 text-sm rounded-lg block w-full p-2.5' placeholder='Contact me...' />
+                    <textarea type='text' id='subject' name='message' value={formData.message} onChange={handleInputChange} required className='bg-[#151920] border border-[#585c6d] placeholder-[#9ca2a9] text-gray-100 text-sm rounded-lg block w-full p-2.5' placeholder='Contact me...' />
                 </div>
                 <button type='submit' className='bg-primary-500 hover:bg-primary-600 text-white font-medium py-2.5 px-5 rounded-lg w-full'>Send Message</button>
                 {isFormSubmitted && (
