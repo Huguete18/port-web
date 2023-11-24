@@ -41,12 +41,12 @@ const EmailSection = () => {
 
   return (
     <section id='contact' className='grid md:grid-cols-2 my-12 md:my-12 py-12 gap-4 relative'>
-        
         <motion.div initial={{ opacity: 0, scale:0.5 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.5 }}>
             <h5 className='text-xl font-bold text-white my-2'>Le{'t\'s'} Connect</h5>
             <p className='text-[#adb7be] mb-4 max-w-md'>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius ratione cupiditate ducimus consectetur, at sed nihil ut saepe corporis optio voluptates sapiente sit maiores inventore quod unde eum laboriosam molestiae.
+            Explore my coding journey and le{'t\'s'} connect! Feel free to reach out for collaboration, questions, or just a friendly chat about coding and technology.
             </p>
+            <p className='text-[#adb7be] mb-4 max-w-md'>Le{'t\'s'} code, connect, and create amazing things together!</p>
             <div className='socials flex flex-row gap-2'>
                 <Link href='https://github.com/Huguete18' target='_blank' rel='noopener noreferrer'>
                     <Image src={GithubIcon}  alt='Github Icon' />
