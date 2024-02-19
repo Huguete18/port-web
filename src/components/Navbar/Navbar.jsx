@@ -11,16 +11,16 @@ import { faX } from "@fortawesome/free-solid-svg-icons";
 const navLinks = [
   {
     title: "About",
-    path: "#about"
+    path: "#about",
   },
   {
     title: "Projects",
-    path: "#projects"
+    path: "#projects",
   },
   {
     title: "Contact",
-    path: "#contact"
-  }
+    path: "#contact",
+  },
 ];
 
 const Navbar = () => {
@@ -29,7 +29,10 @@ const Navbar = () => {
   };
   const [navbarOpen, setNavbarOpen] = useState(false);
   return (
-    <nav className="fixed mx-auto border border-[#33353f] top-0 left-0 right-0 z-10 bg-[#151920] bg-opacity-100">
+    <nav
+      className="fixed mx-auto border border-[#33353f] top-0 left-0 right-0 z-10 bg-[#151920] bg-opacity-90"
+      style={{ backdropFilter: "saturate(180%) blur(20px)" }}
+    >
       <div className="flex container lg:py-4 flex-wrap items-center justify-between mx-auto px-4 py-2">
         <Link
           href={"/"}

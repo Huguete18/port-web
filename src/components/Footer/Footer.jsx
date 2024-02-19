@@ -3,7 +3,10 @@ import Image from "next/image";
 
 const Footer = () => {
   return (
-    <footer className="footer border border-[#33353f] top-0 left-0 right-0 z-10 bg-[#151920] bg-opacity-100">
+    <footer
+      className="footer border border-[#33353f] top-0 left-0 right-0 z-10 bg-[#151920] bg-opacity-90"
+      style={{ backdropFilter: "saturate(180%) blur(20px)" }}
+    >
       <div className="flex container lg:py-4 flex-wrap items-center justify-between mx-auto px-4 py-2">
         <span>
           <Image
@@ -23,7 +26,7 @@ const Footer = () => {
               rel="noopener noreferrer"
             >
               <Image
-                src="/image/social/WhatSapp.png"
+                src="/image/social/WhatSapp.svg"
                 alt=""
                 width={20}
                 height={20}
@@ -36,7 +39,7 @@ const Footer = () => {
               rel="noopener noreferrer"
             >
               <Image
-                src="/image/social/Telegram.png"
+                src="/image/social/Telegram.svg"
                 alt=""
                 width={20}
                 height={20}
@@ -49,7 +52,7 @@ const Footer = () => {
               rel="noopener noreferrer"
             >
               <Image
-                src="/image/social/Twitter.png"
+                src="/image/social/Twitter.svg"
                 alt=""
                 width={20}
                 height={20}
@@ -62,7 +65,7 @@ const Footer = () => {
               rel="noopener noreferrer"
             >
               <Image
-                src="/image/social/Instagram.png"
+                src="/image/social/Instagram.svg"
                 alt=""
                 width={20}
                 height={20}
@@ -75,7 +78,7 @@ const Footer = () => {
               rel="noopener noreferrer"
             >
               <Image
-                src="/image/social/TikTok.png"
+                src="/image/social/TikTok.svg"
                 alt=""
                 width={20}
                 height={20}
@@ -88,7 +91,7 @@ const Footer = () => {
               rel="noopener noreferrer"
             >
               <Image
-                src="/image/social/YouTube.png"
+                src="/image/social/YouTube.svg"
                 alt=""
                 width={20}
                 height={20}

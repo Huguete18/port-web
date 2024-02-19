@@ -1,12 +1,12 @@
 "use client";
 import Image from "next/image";
-import Navbar from "./components/Navbar";
-import HeroSection from "./components/HeroSection";
-import AchievementsSection from "./components/AchievementsSection";
-import AboutSection from "./components/AboutSection";
-import ProjectsSection from "./components/ProjectsSection";
-import EmailSection from "./components/EmailSection";
-import Footer from "./components/Footer";
+import Navbar from "../components/Navbar/Navbar";
+import HeroSection from "./hero/HeroSection";
+import AchievementsSection from "./archivements/AchievementsSection";
+import AboutSection from "./about/AboutSection";
+import ProjectsSection from "./card/ProjectsSection";
+import EmailSection from "./emailsection/EmailSection";
+import Footer from "../components/Footer/Footer";
 
 export default function Home() {
   return (

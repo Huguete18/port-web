@@ -1,7 +1,7 @@
 "use client";
 import React, { useTransition, useState } from "react";
 import Image from "next/image";
-import TabButton from "./TabButton";
+import TabButton from "../../components/Button/TabButton";
 import { motion } from "framer-motion";
 
 const TAB_DATA = [
@@ -18,7 +18,7 @@ const TAB_DATA = [
         <li>React</li>
         <li>Cybersecurity</li>
       </ul>
-    )
+    ),
   },
   {
     title: "Education",
@@ -30,7 +30,7 @@ const TAB_DATA = [
           Higher Education in Vocational Training at Jesuïtes El Clot, Barcelona
         </li>
       </ul>
-    )
+    ),
   },
   {
     title: "Certifications",
@@ -50,7 +50,7 @@ const TAB_DATA = [
           CEPI-BASE Academy
         </li>
       </ul>
-    )
+    ),
   },
   {
     title: "Languaje",
@@ -61,8 +61,8 @@ const TAB_DATA = [
         <li>Spanish</li>
         <li>English</li>
       </ul>
-    )
-  }
+    ),
+  },
 ];
 
 export const AboutSection = () => {
