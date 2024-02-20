@@ -3,6 +3,11 @@ import React, { useTransition, useState } from "react";
 import Image from "next/image";
 import TabButton from "../../components/Button/TabButton";
 import { motion } from "framer-motion";
+import AwesomeSlider from "react-awesome-slider";
+import withAutoplay from "react-awesome-slider/dist/autoplay";
+import "react-awesome-slider/dist/styles.css";
+
+const AutoplaySlider = withAutoplay(AwesomeSlider);
 
 const TAB_DATA = [
   {
@@ -80,16 +85,69 @@ export const AboutSection = () => {
         initial={{ opacity: 0, scale: 0.5 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5 }}
-        className="md:grid md:grid-cols-2 gap-8 items-center py-8 px-4 xl:gap-16 sm:py-16 xl:px-16"
+        className="md:grid md:grid-cols-2 gap-8 items-start py-8 px-4 xl:gap-16 sm:py-16 xl:px-16"
       >
-        <Image
-          src="/image/about-image.png"
-          style={{ borderRadius: "10px" }}
-          alt=""
-          width={500}
-          height={500}
-        />
-        <div className="mt-4 md:mt-0 text-left flex flex-col h-full">
+        <div className="p-4 z-0">
+          <AutoplaySlider
+            className="center"
+            play={true}
+            cancelOnInteraction={false}
+            interval={6000}
+          >
+            <div
+              data-src="/image/about-computer.png"
+              style={{ position: "relative" }}
+            >
+              <div
+                style={{
+                  position: "absolute",
+                  color: "white",
+                  bottom: "20px",
+                  left: "20px",
+                  textAlign: "left",
+                }}
+              >
+                <h1 className="text-white text-4xl font-semibold">Title</h1>
+                <p className="text-white text-2xl font-medium">Description</p>
+              </div>
+            </div>
+            <div
+              data-src="/image/about-image.png"
+              style={{ position: "relative" }}
+            >
+              <div
+                style={{
+                  position: "absolute",
+                  color: "white",
+                  bottom: "20px",
+                  left: "20px",
+                  textAlign: "left",
+                }}
+              >
+                <h1 className="text-white text-3xl font-semibold">Title</h1>
+                <p className="text-white text-2xl font-medium">Description</p>
+              </div>
+            </div>
+            <div
+              data-src="/image/about-developer.png"
+              style={{ position: "relative" }}
+            >
+              <div
+                style={{
+                  position: "absolute",
+                  color: "white",
+                  bottom: "20px",
+                  left: "20px",
+                  textAlign: "left",
+                }}
+              >
+                <h1 className="text-white text-3xl font-semibold">Title</h1>
+                <p className="text-white text-2xl font-medium">Description</p>
+              </div>
+            </div>
+          </AutoplaySlider>
+        </div>
+        <div className="mt-10 md:mt-3 text-left flex flex-col h-full">
           <h2 className="text-4xl font-bold text-white mb-4">About Me</h2>
           <p className="text-base lg:text-lg">
             I am a full stack web developer with a passion for creating
