@@ -1,9 +1,10 @@
 "use client";
 import React from "react";
-import Image from "next/image";
 import { TypeAnimation } from "react-type-animation";
 import { motion } from "framer-motion";
 import { saveAs } from "file-saver";
+import { Button, ButtonGroup } from "@nextui-org/react";
+import { Card, CardHeader, CardBody, Image } from "@nextui-org/react";
 
 const HeroSection = () => {
   const handleDownload = () => {
@@ -44,19 +45,14 @@ const HeroSection = () => {
           <p className="text-[#adb7be] text-base sm:text-lg mb-6 lg:text-xl">
             {"I'm"} a passionate web develop and Cybersecurity.
           </p>
-          <div>
-            <button className="px-6 py-3 w-full sm:w-fit rounded-full mr-4 bg-gradient-to-br from-blue-500 via-primary-500 to-secondary-500 hover:bg-slate-200 text-white">
+          <ButtonGroup>
+            <Button color="primary" variant="shadow">
               Hire Me
-            </button>
-            <button className="px-1 py-1 w-full sm:w-fit rounded-full bg-gradient-to-br from-blue-500 via-primary-500 to-secondary-500 hover:bg-slate-800 text-white mt-3">
-              <span
-                className="block bg-[#1f2430] hover:bg-slate-800 rounded-full px-5 py-2"
-                onClick={handleDownload}
-              >
-                Download CV
-              </span>
-            </button>
-          </div>
+            </Button>
+            <Button color="primary" variant="ghost">
+              <span onClick={handleDownload}>Download CV</span>
+            </Button>
+          </ButtonGroup>
         </motion.div>
         <motion.div
           initial={{ opacity: 0, scale: 0.5 }}
@@ -64,14 +60,27 @@ const HeroSection = () => {
           transition={{ duration: 0.5 }}
           className="col-span-4 place-self-center mt-4 lg:mt-0"
         >
-          <div className="rounded-full bg-[#0f1d29] w-[250px] h-[250px] lg:w-[400px] lg:h-[400px] relative">
-            <Image
-              src="/image/hero-image.png"
-              alt="hero image"
-              className="absolute transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
-              width={300}
-              height={300}
-            />
+          <div className="relative z-0">
+            <Card className="py-4 bg-cyan-950">
+              <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
+                <p className="text-tiny uppercase font-bold text-cyan-500">
+                  Sergi Huguet
+                </p>
+                <small className="text-default-500">24 Years</small>
+                <h4 className="font-bold text-large text-cyan-500">
+                  Frontend Developer
+                </h4>
+              </CardHeader>
+              <CardBody className="overflow-visible py-2">
+                <Image
+                  alt="Card background"
+                  className="object-cover rounded-xl"
+                  src="/image/hero-sergi.png"
+                  width={300}
+                  height={300}
+                />
+              </CardBody>
+            </Card>
           </div>
         </motion.div>
       </div>

@@ -5,20 +5,23 @@ import Link from "next/link";
 import Image from "next/image";
 import emailjs from "@emailjs/browser";
 import { motion } from "framer-motion";
+import { Input } from "@nextui-org/react";
+import { Textarea } from "@nextui-org/react";
+import { Button } from "@nextui-org/react";
 
 const EmailSection = () => {
   const form = useRef();
   const [formData, setFormData] = useState({
     user_name: "",
     user_email: "",
-    message: ""
+    message: "",
   });
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData({
       ...formData,
-      [name]: value
+      [name]: value,
     });
   };
   const sendEmail = (e) => {
@@ -38,7 +41,7 @@ const EmailSection = () => {
           setFormData({
             user_name: "",
             user_email: "",
-            message: ""
+            message: "",
           });
           setIsFormSubmitted(true);
         },
@@ -47,6 +50,9 @@ const EmailSection = () => {
         }
       );
   };
+
+  const variants = ["faded"];
+  const colors = ["primary"];
 
   return (
     <section
@@ -91,63 +97,74 @@ const EmailSection = () => {
         transition={{ duration: 0.5 }}
       >
         <form ref={form} onSubmit={sendEmail} className="flex flex-col">
-          <div className="mb-6">
-            <label
-              htmlFor="name"
-              className="text-white block mb-2 text-sm font-medium"
-            >
-              Your first name and last name
-            </label>
-            <input
-              type="text"
-              id="name"
-              name="user_name"
-              value={formData.user_name}
-              onChange={handleInputChange}
-              required
-              className="bg-[#151920] border border-[#585c6d] placeholder-[#9ca2a9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
-              placeholder="Your full name"
-            />
+          <div className="w-full flex flex-col gap-4 mb-6">
+            {variants.map((variant) =>
+              colors.map((color) => (
+                <div
+                  key={variant}
+                  className="flex w-full flex-wrap md:flex-nowrap mb-6 md:mb-0 gap-4"
+                >
+                  <Input
+                    type="text"
+                    id="name"
+                    name="user_name"
+                    value={formData.user_name}
+                    onChange={handleInputChange}
+                    isRequired
+                    color={color}
+                    variant={variant}
+                    label="Full Name"
+                    placeholder="Enter your name"
+                    className="text-black"
+                  />
+                </div>
+              ))
+            )}
           </div>
-          <div className="mb-6">
-            <label
-              htmlFor="email"
-              className="text-white block mb-2 text-sm font-medium"
-            >
-              Your email
-            </label>
-            <input
-              type="email"
-              id="email"
-              name="user_email"
-              value={formData.user_email}
-              onChange={handleInputChange}
-              required
-              className="bg-[#151920] border border-[#585c6d] placeholder-[#9ca2a9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
-              placeholder="username@gmail.com"
-            />
+          <div className="w-full flex flex-col gap-4 mb-6">
+            {variants.map((variant) =>
+              colors.map((color) => (
+                <div
+                  key={variant}
+                  className="flex w-full flex-wrap md:flex-nowrap mb-6 md:mb-0 gap-4"
+                >
+                  <Input
+                    type="email"
+                    id="email"
+                    name="user_email"
+                    value={formData.user_email}
+                    onChange={handleInputChange}
+                    isRequired
+                    color={color}
+                    variant={variant}
+                    label="Email"
+                    placeholder="Enter your name"
+                    className="text-black"
+                  />
+                </div>
+              ))
+            )}
           </div>
-          <div className="mb-6">
-            <label className="text-white block mb-2 text-sm font-medium">
-              Message
-            </label>
-            <textarea
-              type="text"
-              id="subject"
-              name="message"
-              value={formData.message}
-              onChange={handleInputChange}
-              required
-              className="bg-[#151920] border border-[#585c6d] placeholder-[#9ca2a9] text-gray-100 text-sm rounded-lg block w-full p-2.5"
-              placeholder="Contact me..."
-            />
+          <div className="w-full flex flex-col gap-4 mb-6">
+            {colors.map((color) => (
+              <Textarea
+                key={color}
+                id="subject"
+                name="message"
+                value={formData.message}
+                onChange={handleInputChange}
+                isRequired
+                color={color}
+                variant="faded"
+                label="Description"
+                placeholder="Enter your description"
+                className="text-black"
+              />
+            ))}
           </div>
-          <button
-            type="submit"
-            className="bg-primary-500 hover:bg-primary-600 text-white font-medium py-2.5 px-5 rounded-lg w-full"
-          >
+          <Button type="submit" color="primary" variant="ghost">
             Send Message
-          </button>
+          </Button>
           {isFormSubmitted && (
             <p className="text-green-500 mt-2">Form submitted successfully!</p>
           )}
