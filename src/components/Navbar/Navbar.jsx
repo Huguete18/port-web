@@ -1,36 +1,38 @@
 "use client";
-import React, { useState } from "react";
-import Link from "next/link";
+import React from "react";
 import Image from "next/image";
-import NavLink from "./NavLink";
-import MenuOverlay from "./MenuOverlay";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
-import { faX } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "@nextui-org/react";
+import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
+import { useState, useEffect } from "react";
+import ThemeSwitch from "../ThemeSwitcher";
+import { useRouter, usePathname } from "next/navigation";
 
-const navLinks = [
-  {
-    title: "About",
-    path: "#about",
-  },
-  {
-    title: "Projects",
-    path: "#projects",
-  },
-  {
-    title: "Contact",
-    path: "#contact",
-  },
+const links = [
+  { id: 1, title: "About", url: "#about" },
+  { id: 2, title: "Projects", url: "#projects" },
+  { id: 3, title: "Contact", url: "#contact" },
 ];
 
-const Navbar = () => {
-  const closeNavbar = () => {
-    setNavbarOpen(false);
+function Navbar() {
+  const router = useRouter();
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [isHome, setIsHome] = useState(true);
+  const pathName = usePathname();
+
+  useEffect(() => {
+    setMenuOpen(false);
+    if (pathName != "/") {
+      setIsHome(false);
+    }
+  }, [pathName]);
+
+  const handleNav = () => {
+    setMenuOpen(!menuOpen);
   };
-  const [navbarOpen, setNavbarOpen] = useState(false);
+
   return (
     <nav
-      className="fixed mx-auto border border-[#33353f] top-0 left-0 right-0 z-10 bg-[#151920] bg-opacity-90"
+      className="fixed mx-auto border border-[#dee4ec] dark:border-[#33353f] top-0 left-0 right-0 z-[50] bg-slate-200 dark:bg-[#151920] bg-opacity-90 dark:bg-opacity-90"
       style={{ backdropFilter: "saturate(180%) blur(20px)" }}
     >
       <div className="flex container lg:py-4 flex-wrap items-center justify-between mx-auto px-4 py-2">
@@ -46,38 +48,67 @@ const Navbar = () => {
             height={100}
           />
         </Link>
-        <div className="mobile-menu block md:hidden">
-          {!navbarOpen ? (
-            <button
-              onClick={() => setNavbarOpen(true)}
-              className="flex items-center px-3 py-2 border rounded border-slate-200 text-slate-200 hover:text-white hover:border-white"
-            >
-              <FontAwesomeIcon icon={faBars} fade className="h-5 w-5" />
-            </button>
-          ) : (
-            <button
-              onClick={() => setNavbarOpen(false)}
-              className="flex items-center px-3 py-2 border rounded border-slate-200 text-slate-200 hover:text-white hover:border-white"
-            >
-              <FontAwesomeIcon icon={faX} fade className="h-5 w-5" />
-            </button>
+        <div>
+          {isHome && (
+            <ul className="hidden sm:flex">
+              <ThemeSwitch />
+              {links.map((link) => (
+                <li key={link.id} className="p-3">
+                  <Link
+                    className="text-slate-800 dark:text-[#adb7be]"
+                    href={link.url}
+                  >
+                    {link.title}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           )}
         </div>
-        <div className="menu hidden md:block md:w-auto" id="navbar">
-          <ul className="flex p-4 md:p-0 md:flex-row md:space-x-8 mt-0">
-            {navLinks.map((link, index) => (
-              <li key={index}>
-                <NavLink href={link.path} title={link.title} />
-              </li>
-            ))}
+        {/* Mobile Button */}
+        <div
+          onClick={handleNav}
+          className="text-black dark:text-white md:hidden z-10 flex items-center gap-2"
+        >
+          {menuOpen ? (
+            <AiOutlineClose size={20} />
+          ) : (
+            <div className="flex items-center">
+              <div className="mr-2">
+                <ThemeSwitch />
+              </div>
+              <div className="p-2">
+                <AiOutlineMenu size={20} />
+              </div>
+            </div>
+          )}
+        </div>
+        {/* Mobile Menu */}
+        <div
+          className={
+            menuOpen
+              ? "md:hidden absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center w-full h-screen bg-light bg-slate-300 dark:bg-zinc-900 text-center ease-in duration-300"
+              : "md:hidden absolute top-0 left-[-100%] right-0 bottom-0 flex justify-center items-center w-full h-screen bg-black text-center ease-in duration-300 z-50"
+          }
+        >
+          <ul>
+            {isHome &&
+              links.map((link) => (
+                <li key={link.id}>
+                  <Link
+                    className="p-4 font-semibold text-4xl"
+                    href={link.url}
+                    onClick={handleNav}
+                  >
+                    {link.title}
+                  </Link>
+                </li>
+              ))}
           </ul>
         </div>
       </div>
-      {navbarOpen ? (
-        <MenuOverlay links={navLinks} onClick={closeNavbar} />
-      ) : null}
     </nav>
   );
-};
+}
 
 export default Navbar;

@@ -21,7 +21,7 @@ const HeroSection = () => {
           transition={{ duration: 0.5 }}
           className="col-span-7 place-self-center text-center sm:text-left justify-self-start"
         >
-          <h1 className="text-white mb-4 text-4xl sm:text-5xl lg:text-8xl lg:leading-normal font-extrabold">
+          <h1 className="text-slate-800 dark:text-slate-200 mb-4 text-4xl sm:text-5xl lg:text-8xl lg:leading-normal font-extrabold">
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-600">
               Hello, {"I'm"}
             </span>
@@ -42,7 +42,7 @@ const HeroSection = () => {
               repeat={Infinity}
             />
           </h1>
-          <p className="text-[#adb7be] text-base sm:text-lg mb-6 lg:text-xl">
+          <p className=" text-slate-800 dark:text-[#adb7be] text-base sm:text-lg mb-6 lg:text-xl">
             {"I'm"} a passionate web develop and Cybersecurity.
           </p>
           <ButtonGroup>
@@ -60,14 +60,16 @@ const HeroSection = () => {
           transition={{ duration: 0.5 }}
           className="col-span-4 place-self-center mt-4 lg:mt-0"
         >
-          <div className="relative z-0">
-            <Card className="py-4 bg-cyan-950">
+          <div className="relative z-0 py-4">
+            <Card className="py-4 bg-slate-400 dark:bg-cyan-950">
               <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
-                <p className="text-tiny uppercase font-bold text-cyan-500">
+                <p className="text-tiny uppercase font-bold text-cyan-950 dark:text-cyan-500">
                   Sergi Huguet
                 </p>
-                <small className="text-default-500">24 Years</small>
-                <h4 className="font-bold text-large text-cyan-500">
+                <small className="text-slate-800 dark:text-slate-400">
+                  24 Years
+                </small>
+                <h4 className="font-bold text-large text-cyan-950 dark:text-cyan-500">
                   Frontend Developer
                 </h4>
               </CardHeader>

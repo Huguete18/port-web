@@ -80,7 +80,7 @@ export const AboutSection = () => {
   };
 
   return (
-    <section id="about" className="text-white">
+    <section id="about" className="text-slate-800 dark:text-[#adb7be]">
       <motion.div
         initial={{ opacity: 0, scale: 0.5 }}
         animate={{ opacity: 1, scale: 1 }}
@@ -148,7 +148,9 @@ export const AboutSection = () => {
           </AutoplaySlider>
         </div>
         <div className="mt-10 md:mt-3 text-left flex flex-col h-full">
-          <h2 className="text-4xl font-bold text-white mb-4">About Me</h2>
+          <h2 className="text-4xl font-bold mb-4 text-slate-900 dark:text-[#c7d3db]">
+            About Me
+          </h2>
           <p className="text-base lg:text-lg">
             I am a full stack web developer with a passion for creating
             interactive and responsive web applications. I have experience
