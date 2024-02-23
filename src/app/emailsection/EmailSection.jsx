@@ -64,15 +64,15 @@ const EmailSection = () => {
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5 }}
       >
-        <h5 className="text-xl font-bold text-slate-900 dark:text-[#c7d3db00] my-2">
+        <h5 className="text-xl font-bold text-cyan-950 dark:text-cyan-300 my-2">
           Le{"t's"} Connect
         </h5>
-        <p className="text-slate-800 dark:text-[#adb7be] mb-4 max-w-md">
+        <p className="text-cyan-950 dark:text-cyan-300 mb-4 max-w-md">
           Explore my coding journey and le{"t's"} connect! Feel free to reach
           out for collaboration, questions, or just a friendly chat about coding
           and technology.
         </p>
-        <p className="text-slate-800 dark:text-[#adb7be] mb-4 max-w-md">
+        <p className="text-cyan-950 dark:text-cyan-300 mb-4 max-w-md">
           Le{"t's"} code, connect, and create amazing things together!
         </p>
         <div className="socials flex flex-row gap-2">
@@ -91,7 +91,6 @@ const EmailSection = () => {
             <Image src={LinkedinIcon} alt="Linkedin Icon" />
           </Link>
         </div>
-        <br />
       </motion.div>
       <motion.div
         initial={{ opacity: 0, scale: 0.5 }}
@@ -117,7 +116,7 @@ const EmailSection = () => {
                     variant={variant}
                     label="Full Name"
                     placeholder="Enter your name"
-                    className="text-black"
+                    className="text-slate-800 dark:text-[#cad7e0]"
                   />
                 </div>
               ))
@@ -141,7 +140,7 @@ const EmailSection = () => {
                     variant={variant}
                     label="Email"
                     placeholder="Enter your name"
-                    className="text-black"
+                    className="text-slate-800 dark:text-[#cad7e0]"
                   />
                 </div>
               ))
@@ -160,7 +159,7 @@ const EmailSection = () => {
                 variant="faded"
                 label="Description"
                 placeholder="Enter your description"
-                className="text-black"
+                className="text-slate-800 dark:text-[#cad7e0]"
               />
             ))}
           </div>

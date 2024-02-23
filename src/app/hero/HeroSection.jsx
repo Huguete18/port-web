@@ -4,7 +4,13 @@ import { TypeAnimation } from "react-type-animation";
 import { motion } from "framer-motion";
 import { saveAs } from "file-saver";
 import { Button, ButtonGroup } from "@nextui-org/react";
-import { Card, CardHeader, CardBody, Image } from "@nextui-org/react";
+import {
+  Card,
+  CardHeader,
+  CardBody,
+  CardFooter,
+  Image,
+} from "@nextui-org/react";
 
 const HeroSection = () => {
   const handleDownload = () => {
@@ -22,7 +28,7 @@ const HeroSection = () => {
           className="col-span-7 place-self-center text-center sm:text-left justify-self-start"
         >
           <h1 className="text-slate-800 dark:text-slate-200 mb-4 text-4xl sm:text-5xl lg:text-8xl lg:leading-normal font-extrabold">
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-600">
+            <span class="bg-clip-text text-transparent bg-gradient-to-r from-pink-500 to-violet-500">
               Hello, {"I'm"}
             </span>
             <br />
@@ -42,7 +48,7 @@ const HeroSection = () => {
               repeat={Infinity}
             />
           </h1>
-          <p className=" text-slate-800 dark:text-[#adb7be] text-base sm:text-lg mb-6 lg:text-xl">
+          <p className="text-slate-800 dark:text-[#adb7be] text-base sm:text-lg mb-6 lg:text-xl">
             {"I'm"} a passionate web develop and Cybersecurity.
           </p>
           <ButtonGroup>
@@ -61,7 +67,7 @@ const HeroSection = () => {
           className="col-span-4 place-self-center mt-4 lg:mt-0"
         >
           <div className="relative z-0 py-4">
-            <Card className="py-4 bg-slate-400 dark:bg-cyan-950">
+            <Card className="py-4 bg-slate-200 dark:bg-cyan-950">
               <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
                 <p className="text-tiny uppercase font-bold text-cyan-950 dark:text-cyan-500">
                   Sergi Huguet
@@ -82,6 +88,26 @@ const HeroSection = () => {
                   height={300}
                 />
               </CardBody>
+              <CardFooter className="absolute bg-slate-200 dark:bg-[#151920] bg-opacity-95 dark:bg-opacity-95 bottom-0 z-10 border-t-1 border-slate-100 dark:border-slate-800">
+                <div className="flex flex-grow gap-2 items-center">
+                  <Image
+                    alt="Breathing app icon"
+                    className="rounded-full w-10 h-11 bg-black"
+                    src="/image/developer.png"
+                  />
+                  <div className="flex flex-col">
+                    <p className="text-tiny text-slate-800 dark:text-slate-400">
+                      Frontend Developer
+                    </p>
+                    <p className="text-tiny text-slate-800 dark:text-slate-400">
+                      Sergi Huguet
+                    </p>
+                  </div>
+                </div>
+                <Button radius="full" size="sm">
+                  Hire Me
+                </Button>
+              </CardFooter>
             </Card>
           </div>
         </motion.div>
