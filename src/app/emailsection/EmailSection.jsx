@@ -1,13 +1,12 @@
 import React, { useRef, useState } from "react";
-import GithubIcon from "../../../public/github-icon.svg";
-import LinkedinIcon from "../../../public/linkedin-icon.svg";
 import Link from "next/link";
-import Image from "next/image";
 import emailjs from "@emailjs/browser";
 import { motion } from "framer-motion";
 import { Input } from "@nextui-org/react";
 import { Textarea } from "@nextui-org/react";
 import { Button } from "@nextui-org/react";
+import { Accordion, AccordionItem } from "@nextui-org/react";
+import { Divider } from "@nextui-org/react";
 
 const EmailSection = () => {
   const form = useRef();
@@ -53,6 +52,12 @@ const EmailSection = () => {
 
   const variants = ["faded"];
   const colors = ["primary"];
+  const portfolio =
+    "This website is a showcase of my works and projects. Here you can explore my skills, experiences, and achievements. If you are interested in my work and want to know more, don’t hesitate to contact me.";
+  const protections =
+    "Your data is valuable. To protect it, it’s important to back up regularly, use encryption, and be aware of who you give access to your information.";
+  const contact =
+    "If you are interested in my work, send me an email. For more details, visit my LinkedIn and GitHub.";
 
   return (
     <section
@@ -64,40 +69,59 @@ const EmailSection = () => {
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5 }}
       >
-        <h5 className="text-xl font-bold text-cyan-950 dark:text-cyan-300 my-2">
-          Le{"t's"} Connect
-        </h5>
-        <p className="text-cyan-950 dark:text-cyan-300 mb-4 max-w-md">
-          Explore my coding journey and le{"t's"} connect! Feel free to reach
-          out for collaboration, questions, or just a friendly chat about coding
-          and technology.
-        </p>
-        <p className="text-cyan-950 dark:text-cyan-300 mb-4 max-w-md">
-          Le{"t's"} code, connect, and create amazing things together!
-        </p>
-        <div className="socials flex flex-row gap-2">
-          <Link
-            href="https://github.com/Huguete18"
-            target="_blank"
-            rel="noopener noreferrer"
+        <Accordion
+          variant="shadow"
+          className="mt-4 bg-slate-200 dark:bg-cyan-950 text-cyan-950 dark:text-cyan-300"
+        >
+          <AccordionItem key="1" aria-label="My Portfolio" title="My Portfolio">
+            {portfolio}
+          </AccordionItem>
+          <AccordionItem
+            key="2"
+            aria-label="Data Protection"
+            title="Data Protection"
           >
-            <Image src={GithubIcon} alt="Github Icon" />
-          </Link>
-          <Link
-            href="https://www.linkedin.com/in/sergi-huguet-986b3071/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image src={LinkedinIcon} alt="Linkedin Icon" />
-          </Link>
-        </div>
+            {protections}
+          </AccordionItem>
+          <AccordionItem key="3" aria-label="Contact" title="Contact">
+            <div className="max-w-md">
+              <div className="space-y-1">{contact}</div>
+              <Divider className="my-4" />
+              <div className="flex h-5 items-center space-x-4 text-small mb-4">
+                <div>
+                  <Button size="sm" color="primary" variant="solid">
+                    <Link
+                      href="https://www.linkedin.com/in/sergi-huguet-986b3071/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      LinKedIn
+                    </Link>
+                  </Button>
+                </div>
+                <Divider orientation="vertical" />
+                <div>
+                  <Button size="sm" color="primary" variant="solid">
+                    <Link
+                      href="https://github.com/Huguete18"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      GitHub
+                    </Link>
+                  </Button>
+                </div>
+              </div>
+            </div>
+          </AccordionItem>
+        </Accordion>
       </motion.div>
       <motion.div
         initial={{ opacity: 0, scale: 0.5 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5 }}
       >
-        <form ref={form} onSubmit={sendEmail} className="flex flex-col">
+        <form ref={form} onSubmit={sendEmail} className="flex flex-col mt-4">
           <div className="w-full flex flex-col gap-4 mb-6">
             {variants.map((variant) =>
               colors.map((color) => (

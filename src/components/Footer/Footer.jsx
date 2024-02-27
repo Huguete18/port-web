@@ -4,7 +4,7 @@ import Image from "next/image";
 const Footer = () => {
   return (
     <footer
-      className="footer border border-[#dee4ec] dark:border-[#33353f] top-0 left-0 right-0 z-10 bg-slate-200 dark:bg-[#151920] bg-opacity-90 dark:bg-opacity-90"
+      className="footer top-0 left-0 right-0 z-10 bg-slate-200 dark:bg-[#131313f1] bg-opacity-90 dark:bg-opacity-90"
       style={{ backdropFilter: "saturate(180%) blur(20px)" }}
     >
       <div className="flex container lg:py-4 flex-wrap items-center justify-between mx-auto px-4 py-2">
@@ -18,7 +18,9 @@ const Footer = () => {
           />
         </span>
         <div className="flex flex-col items-center">
-          <p className="text-slate-600 mb-2">Copyright © 2023</p>
+          <p className="text-slate-900 dark:text-cyan-200 mb-2">
+            Copyright © 2023
+          </p>
           <div className="flex items-center">
             <a
               href="https://wa.link/mofa46"

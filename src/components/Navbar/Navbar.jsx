@@ -32,13 +32,13 @@ function Navbar() {
 
   return (
     <nav
-      className="fixed mx-auto border border-[#dee4ec] dark:border-[#33353f] top-0 left-0 right-0 z-[50] bg-slate-200 dark:bg-[#151920] bg-opacity-90 dark:bg-opacity-90"
+      className="fixed mx-auto top-0 left-0 right-0 z-[50] bg-slate-200 dark:bg-[#131313f1] bg-opacity-90 dark:bg-opacity-90"
       style={{ backdropFilter: "saturate(180%) blur(20px)" }}
     >
       <div className="flex container lg:py-4 flex-wrap items-center justify-between mx-auto px-4 py-2">
         <Link
           href={"/"}
-          className="text-2xl md:text-2xl text-white font-semibold"
+          className="text-2xl md:text-2xl text-cyan-200 font-semibold"
         >
           <Image
             src="/image/SHV.png"
@@ -55,7 +55,7 @@ function Navbar() {
               {links.map((link) => (
                 <li key={link.id} className="p-3">
                   <Link
-                    className="text-slate-800 dark:text-[#adb7be]"
+                    className="text-slate-900 dark:text-cyan-200"
                     href={link.url}
                   >
                     {link.title}
@@ -68,10 +68,12 @@ function Navbar() {
         {/* Mobile Button */}
         <div
           onClick={handleNav}
-          className="text-black dark:text-white md:hidden z-10 flex items-center gap-2"
+          className="text-slate-900 dark:text-cyan-200 md:hidden z-10 flex items-center gap-2"
         >
           {menuOpen ? (
-            <AiOutlineClose size={20} />
+            <div className="p-2">
+              <AiOutlineClose size={20} />
+            </div>
           ) : (
             <div className="flex items-center">
               <div className="mr-2">
@@ -87,8 +89,8 @@ function Navbar() {
         <div
           className={
             menuOpen
-              ? "md:hidden absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center w-full h-screen bg-light bg-slate-300 dark:bg-zinc-900 text-center ease-in duration-300"
-              : "md:hidden absolute top-0 left-[-100%] right-0 bottom-0 flex justify-center items-center w-full h-screen bg-black text-center ease-in duration-300 z-50"
+              ? "md:hidden absolute top-0 left-0 right-0 bottom-0 flex justify-center items-center w-full h-screen bg-light bg-slate-200 dark:bg-[#131313] text-center ease-in duration-300"
+              : "md:hidden absolute top-0 left-[-100%] right-0 bottom-0 flex justify-center items-center w-full h-screen bg-slate-200 dark:bg-[#131313] text-center ease-in duration-300 z-50"
           }
         >
           <ul>

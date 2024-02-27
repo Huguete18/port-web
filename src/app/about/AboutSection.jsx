@@ -1,6 +1,5 @@
 "use client";
-import React, { useTransition, useState } from "react";
-import TabButton from "../../components/Button/TabButton";
+import React from "react";
 import { motion } from "framer-motion";
 import AwesomeSlider from "react-awesome-slider";
 import withAutoplay from "react-awesome-slider/dist/autoplay";
@@ -20,6 +19,7 @@ let tabs = [
         <li>HTML5</li>
         <li>CSS3</li>
         <li>JavaScript</li>
+        <li>Python</li>
         <li>Bootstrap</li>
         <li>Vue</li>
         <li>React</li>
@@ -81,15 +81,15 @@ export const AboutSection = () => {
         transition={{ duration: 0.5 }}
         className="md:grid md:grid-cols-2 gap-8 items-start py-8 px-4 xl:gap-16 sm:py-16 xl:px-16"
       >
-        <div className="p-4 z-0">
+        <div className="p-3 z-0">
           <AutoplaySlider
-            className="center"
+            className="flex justify-center items-center rounded-lg overflow-hidden"
             play={true}
             cancelOnInteraction={false}
             interval={6000}
           >
             <div
-              data-src="/image/about-computer.png"
+              data-src="/image/about-cybersecurity.png"
               style={{ position: "relative" }}
             >
               <div
@@ -101,12 +101,16 @@ export const AboutSection = () => {
                   textAlign: "left",
                 }}
               >
-                <h1 className="text-white text-4xl font-semibold">Title</h1>
-                <p className="text-white text-2xl font-medium">Description</p>
+                <h1 className="text-white text-4xl font-semibold">
+                  Cybersecurity
+                </h1>
+                <p className="text-white text-2xl font-medium">
+                  We implement robust security protocols to protect data.
+                </p>
               </div>
             </div>
             <div
-              data-src="/image/about-image.png"
+              data-src="/image/about-development.png"
               style={{ position: "relative" }}
             >
               <div
@@ -118,12 +122,17 @@ export const AboutSection = () => {
                   textAlign: "left",
                 }}
               >
-                <h1 className="text-white text-3xl font-semibold">Title</h1>
-                <p className="text-white text-2xl font-medium">Description</p>
+                <h1 className="text-white text-3xl font-semibold">
+                  Web Development
+                </h1>
+                <p className="text-white text-2xl font-medium">
+                  We create interactive and attractive web experiences for
+                  users.
+                </p>
               </div>
             </div>
             <div
-              data-src="/image/about-developer.png"
+              data-src="/image/about-python.png"
               style={{ position: "relative" }}
             >
               <div
@@ -135,8 +144,11 @@ export const AboutSection = () => {
                   textAlign: "left",
                 }}
               >
-                <h1 className="text-white text-3xl font-semibold">Title</h1>
-                <p className="text-white text-2xl font-medium">Description</p>
+                <h1 className="text-white text-3xl font-semibold">Python</h1>
+                <p className="text-white text-2xl font-medium">
+                  We generate efficient solutions with Python, a versatile
+                  programming language.
+                </p>
               </div>
             </div>
           </AutoplaySlider>

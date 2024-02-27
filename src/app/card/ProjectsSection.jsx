@@ -11,42 +11,42 @@ const projectsData = [
     description: "Project 1 description",
     image: "/image/projects/1.png",
     tag: ["All", "Web"],
-    gitUrl: "/",
+    gitUrl: "https://github.com/Huguete18/my-app",
     previewUrl: "/",
   },
   {
     id: 2,
-    title: "Potography Portfolio Website",
+    title: "Hash Generator",
     description: "Project 2 description",
     image: "/image/projects/2.png",
-    tag: ["All", "Web"],
+    tag: ["All", "Python"],
     gitUrl: "/",
     previewUrl: "/",
   },
   {
     id: 3,
-    title: "E-commerce Application",
+    title: "Port Scanner",
     description: "Project 3 description",
     image: "/image/projects/3.png",
-    tag: ["All", "Web"],
+    tag: ["All", "Python"],
     gitUrl: "/",
     previewUrl: "/",
   },
   {
     id: 4,
-    title: "Food Ordering Application",
+    title: "Phone Scanner",
     description: "Project 4 description",
     image: "/image/projects/4.png",
-    tag: ["All", "Mobile"],
+    tag: ["All", "Python"],
     gitUrl: "/",
     previewUrl: "/",
   },
   {
     id: 5,
     title: "React Firebase Template",
-    description: "Authentication and CRUD operations",
+    description: "Authentication and CRUD",
     image: "/image/projects/5.png",
-    tag: ["All", "Web"],
+    tag: ["All", "Mobile"],
     gitUrl: "/",
     previewUrl: "/",
   },
@@ -56,8 +56,8 @@ const projectsData = [
     description: "Project 5 description",
     image: "/image/projects/6.png",
     tag: ["All", "Web"],
-    gitUrl: "/",
-    previewUrl: "/",
+    gitUrl: "https://github.com/Huguete18?tab=repositories",
+    previewUrl: "https://www.linkedin.com/feed/",
   },
 ];
 
@@ -99,6 +99,11 @@ const ProjectsSection = () => {
           onClick={handleTagChange}
           name="Mobile"
           isSelected={tag === "Mobile"}
+        />
+        <ProjectTag
+          onClick={handleTagChange}
+          name="Python"
+          isSelected={tag === "Python"}
         />
       </div>
       <ul ref={ref} className="grid md:grid-cols-3 gap-8 md:gap-12">

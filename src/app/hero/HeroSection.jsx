@@ -67,7 +67,10 @@ const HeroSection = () => {
           className="col-span-4 place-self-center mt-4 lg:mt-0"
         >
           <div className="relative z-0 py-4">
-            <Card className="py-4 bg-slate-200 dark:bg-cyan-950">
+            <Card
+              isFooterBlurred
+              className="py-4 bg-slate-200 dark:bg-cyan-950"
+            >
               <CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
                 <p className="text-tiny uppercase font-bold text-cyan-950 dark:text-cyan-500">
                   Sergi Huguet
@@ -97,10 +100,10 @@ const HeroSection = () => {
                   />
                   <div className="flex flex-col">
                     <p className="text-tiny text-slate-800 dark:text-slate-400">
-                      Frontend Developer
+                      Specialist in React and Vue
                     </p>
                     <p className="text-tiny text-slate-800 dark:text-slate-400">
-                      Sergi Huguet
+                      5 years of experience
                     </p>
                   </div>
                 </div>
