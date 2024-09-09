@@ -76,7 +76,7 @@ const HeroSection = () => {
                   Sergi Huguet
                 </p>
                 <small className="text-slate-800 dark:text-slate-400">
-                  24 Years
+                  25 Years
                 </small>
                 <h4 className="font-bold text-large text-cyan-950 dark:text-cyan-500">
                   Frontend Developer

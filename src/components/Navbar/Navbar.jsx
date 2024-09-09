@@ -32,7 +32,7 @@ function Navbar() {
 
   return (
     <nav
-      className="fixed mx-auto top-0 left-0 right-0 z-[50] bg-slate-200 dark:bg-[#131313f1] bg-opacity-90 dark:bg-opacity-90"
+      className="fixed mx-auto top-0 left-0 right-0 z-[50] bg-slate-200 dark:bg-[#131313fa] bg-opacity-90 dark:bg-opacity-90"
       style={{ backdropFilter: "saturate(180%) blur(20px)" }}
     >
       <div className="flex container lg:py-4 flex-wrap items-center justify-between mx-auto px-4 py-2">

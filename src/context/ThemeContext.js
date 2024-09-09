@@ -1,23 +1,21 @@
 "use client";
 import { createContext, useState, useEffect } from "react";
+
 export const ThemeContext = createContext();
 
 export const ThemeProvider = ({ children }) => {
-  const [theme, setTheme] = useState("dark");
-
-  useEffect(() => {
+  const [theme, setTheme] = useState(() => {
     if (typeof window !== "undefined" && window.localStorage) {
-      let localTheme = "light";
-      if (
-        localStorage.theme === "dark" ||
-        (!("theme" in localStorage) &&
-          window.matchMedia("(prefers-color-scheme: dark)").matches)
-      ) {
-        localTheme = "dark";
+      const storedTheme = localStorage.getItem("theme");
+      if (storedTheme && (storedTheme === "light" || storedTheme === "dark")) {
+        return storedTheme;
+      } else {
+        localStorage.setItem("theme", "dark");
+        return "dark";
       }
-      setTheme(localTheme);
     }
-  }, []);
+    return "dark";
+  });
 
   useEffect(() => {
     if (typeof window !== "undefined" && window.localStorage) {

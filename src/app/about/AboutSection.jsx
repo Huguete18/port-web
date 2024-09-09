@@ -44,6 +44,8 @@ let tabs = [
     label: "Certifications",
     content: (
       <ul className="list-disc pl-4">
+        <li>Cybersecurity Specialist in Pentesting, CEPI-BASE Academy </li>
+        <li>Cybersecurity Essentials Specialist, CEPI-BASE Academy</li>
         <li>Senior Technician in Java with Android, CEPI-BASE Academy</li>
         <li>
           Senior Technician in Web Application Development, Jesuïtes El Clot
